@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.circle {
+    background-color:yellow;
+    height: 100px;
+    width: 100px;
+    margin: 12px;  
+    border-radius: 50%;
+    color: white;
+    transition: background-color .5s, width .5s, height .5s, margin .5s;
+}
+/* FIZZ - multiples of 3 */
+.circle:nth-child(3n){
+    background-color: blue;
+}
+
+.circle:nth-child(3n)::before {
+    content: 'FIZZ';
+    position: relative;
+    top: 42px;
+    left: 33px;
+}
+
+
+.circle:nth-child(3n):hover::before {
+    top: 47px;
+    left: 38px;
+}
+
+/* BUZZ - multiples of 5 */
+.circle:nth-child(5n){
+    background-color:green;
+}
+
+.circle:nth-child(5n)::before {
+    content: 'BUZZ';
+    position: relative;
+    top: 42px;
+    left: 29px;
+}
+
+.circle:nth-child(5n):hover:before {
+    top: 47px;
+    left: 34px;
+}
+
+/* FIZZBUZZ - multiples of 15 */
+.circle:nth-child(15n){
+    background-color: red;
+}
+.circle:nth-child(15n)::before {
+    content: 'FIZZBUZZ';
+    position: relative;
+    top: 42px;
+    left: 12px;
+}
+
+.circle:nth-child(15n):hover::before {
+    top: 47px;
+    left: 17px;
+}
+
+.circle:hover {
+    background-color: purple;
+    -webkit-box-shadow: 6px 6px 8px 0px #9015FF; 
+    box-shadow: 6px 6px 8px 0px #9015FF;
+    width: 110px;
+    height: 110px;
+    margin: 7px;
+    transition: background-color .5s, width .5s, height .5s, margin .5s;
+}
+
+@media only screen and (max-width: 350px) {
+    .circle {
+        height: 150px;
+        width: 150px;
+        min-width: 150px;
+    }
+
+    .circle::before {
+        top: 65px;
+        font-size: 24px;
+    }
+
+    .circle:nth-child(3n)::before {
+    top: 62px;
+    left: 50px;
+}   
+    .circle:nth-child(5n)::before {
+    top: 62px;
+    left: 44px;
+    }    
+    .circle:nth-child(15n)::before {
+        top: 60px;
+        left: 18px;
+}
+
